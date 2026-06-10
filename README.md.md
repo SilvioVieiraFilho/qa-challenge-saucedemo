@@ -13,11 +13,11 @@ O objetivo foi validar funcionalidades do sistema, experiência do usuário, reg
 Projeto: TGID Store Test  
 Tipo: Aplicação Web de E-commerce  
 Ambiente: Web (Firebase Hosting)  
-URL: https://tgid-store-test.web.app  
+URL: https://tgid-store-test.web.app
 
 Acesso administrativo:  
 Email: admin@tgid.com.br  
-Senha: admin123  
+Senha: admin123
 
 ---
 
@@ -25,11 +25,11 @@ Senha: admin123
 
 Os testes tiveram como objetivo:
 
-- Realizar testes exploratórios manuais  
-- Validar o fluxo completo de compra  
-- Identificar falhas funcionais e de regras de negócio  
-- Analisar experiência do usuário e consistência do sistema  
-- Documentar defeitos de forma estruturada  
+- Realizar testes exploratórios manuais
+- Validar o fluxo completo de compra
+- Identificar falhas funcionais e de regras de negócio
+- Analisar experiência do usuário e consistência do sistema
+- Documentar defeitos de forma estruturada
 
 ---
 
@@ -37,12 +37,12 @@ Os testes tiveram como objetivo:
 
 Foram aplicadas as seguintes abordagens:
 
-- Testes exploratórios  
-- Testes funcionais  
-- Testes negativos  
-- Testes de fluxo ponta a ponta  
-- Validação de regras de negócio  
-- Análise de estado de sessão e carrinho  
+- Testes exploratórios
+- Testes funcionais
+- Testes negativos
+- Testes de fluxo ponta a ponta
+- Validação de regras de negócio
+- Análise de estado de sessão e carrinho
 
 ---
 
@@ -54,7 +54,7 @@ Scenario: Login com credenciais válidas
 Given o usuário está na tela de login  
 When o usuário insere credenciais válidas  
 Then o sistema deve autenticar o usuário  
-And redirecionar para a página inicial  
+And redirecionar para a página inicial
 
 ---
 
@@ -63,7 +63,7 @@ And redirecionar para a página inicial
 Scenario: Adicionar produto ao carrinho  
 Given o usuário está na página de produtos  
 When o usuário adiciona um produto ao carrinho  
-Then o contador do carrinho deve ser atualizado corretamente  
+Then o contador do carrinho deve ser atualizado corretamente
 
 ---
 
@@ -73,35 +73,35 @@ Scenario: Finalizar compra com sucesso
 Given o usuário possui itens no carrinho  
 When o usuário finaliza a compra  
 Then o sistema deve confirmar o pedido  
-And limpar o carrinho  
+And limpar o carrinho
 
 ---
 
 ## Defeitos identificados
 
-- O sistema permite valores negativos no carrinho  
-- Finalização de compra com itens inválidos  
-- Mensagens de erro técnicas do Firebase expostas ao usuário  
-- Filtro de preço não funciona corretamente  
-- Ordenação de produtos não funciona corretamente  
-- Erro ortográfico no botão de checkout  
-- Falta de validação em campos de endereço (CEP, rua, cidade, estado)  
-- Carrinho persiste após logout  
-- Checkout acessível sem autenticação  
-- Botão de dúvidas frequentes sem ação  
-- Estoque do produto não é atualizado após compra  
+- O sistema permite valores negativos no carrinho
+- Finalização de compra com itens inválidos
+- Mensagens de erro técnicas do Firebase expostas ao usuário
+- Filtro de preço não funciona corretamente
+- Ordenação de produtos não funciona corretamente
+- Erro ortográfico no botão de checkout
+- Falta de validação em campos de endereço (CEP, rua, cidade, estado)
+- Carrinho persiste após logout
+- Checkout acessível sem autenticação
+- Botão de dúvidas frequentes sem ação
+- Estoque do produto não é atualizado após compra
 
 ---
 
 ## Regras de negócio validadas
 
-- O valor total do carrinho é atualizado corretamente  
-- O carrinho é limpo após a finalização da compra  
-- O botão de confirmação só é habilitado com dados válidos  
-- Campos opcionais são tratados corretamente  
-- O sistema exibe mensagem de sucesso após compra  
-- O logout encerra corretamente a sessão  
-- A navegação entre telas funciona corretamente  
+- O valor total do carrinho é atualizado corretamente
+- O carrinho é limpo após a finalização da compra
+- O botão de confirmação só é habilitado com dados válidos
+- Campos opcionais são tratados corretamente
+- O sistema exibe mensagem de sucesso após compra
+- O logout encerra corretamente a sessão
+- A navegação entre telas funciona corretamente
 
 ---
 
@@ -109,7 +109,7 @@ And limpar o carrinho
 
 Tipo de teste: Testes manuais exploratórios  
 Cobertura: Fluxo completo de e-commerce  
-Foco: Funcionalidade, UX, regras de negócio e consistência  
+Foco: Funcionalidade, UX, regras de negócio e consistência
 
 ---
 
@@ -117,58 +117,74 @@ Foco: Funcionalidade, UX, regras de negócio e consistência
 
 ### Pontos positivos
 
-- Fluxo de compra funcional  
-- Sistema de autenticação funcional  
-- Carrinho com atualização dinâmica  
-- Checkout operacional  
+- Fluxo de compra funcional
+- Sistema de autenticação funcional
+- Carrinho com atualização dinâmica
+- Checkout operacional
 
 ### Problemas críticos
 
-- Inconsistência de dados no carrinho e estoque  
-- Falhas em regras de negócio  
-- Falhas de autenticação em rotas protegidas  
-- Problemas em filtros e ordenação  
-- Falta de validação em formulários  
+- Inconsistência de dados no carrinho e estoque
+- Falhas em regras de negócio
+- Falhas de autenticação em rotas protegidas
+- Problemas em filtros e ordenação
+- Falta de validação em formulários
 
 ---
 
 ## Sugestões de melhoria
 
-- Implementar validação para impedir valores negativos no carrinho  
-- Corrigir sincronização de estoque após compras  
-- Melhorar mensagens de erro para o usuário final  
-- Corrigir filtros e ordenação de produtos  
-- Implementar validação completa de endereço  
-- Reforçar autenticação em rotas protegidas  
-- Corrigir inconsistência de sessão no carrinho  
+- Implementar validação para impedir valores negativos no carrinho
+- Corrigir sincronização de estoque após compras
+- Melhorar mensagens de erro para o usuário final
+- Corrigir filtros e ordenação de produtos
+- Implementar validação completa de endereço
+- Reforçar autenticação em rotas protegidas
+- Corrigir inconsistência de sessão no carrinho
 
 ---
 
-## Possibilidade de automação
+## Automação de testes (complemento)
 
-Este projeto foi executado manualmente com foco em testes exploratórios, porém possui forte potencial para automação.
+Além dos testes manuais, foi desenvolvida uma automação para demonstrar conhecimento técnico em testes de interface web.
 
-Possíveis áreas de automação:
+## Tecnologias utilizadas
 
-- Fluxo de login  
-- Operações de carrinho (adicionar, remover, validar quantidade)  
-- Fluxo completo de checkout  
-- Testes de regressão de regras de negócio  
-- Validação de componentes de interface  
-
-Ferramentas sugeridas:
-
-- Cypress  
-- Playwright  
-- Selenium WebDriver  
-- Rest Assured (caso exista API disponível)  
+- Selenium WebDriver
+- Java
+- Cucumber (BDD)
+- JUnit
+- Page Object Model (POM)
 
 ---
 
-## Conclusão
+## Objetivo da automação
 
-O sistema TGID Store apresenta um fluxo funcional de e-commerce, com autenticação, navegação e checkout operacionais.
+A automação foi criada como complemento ao processo manual, com foco em validar fluxos críticos e demonstrar capacidade técnica em testes regressivos.
 
-No entanto, foram identificadas falhas importantes relacionadas à consistência de dados, regras de negócio e validações, que impactam a confiabilidade da aplicação.
+---
 
-O projeto demonstra uma cobertura sólida de testes manuais exploratórios e possui potencial para evolução em automação.
+## Cenários automatizados
+
+- Login na aplicação
+- Navegação para produtos
+- Adição de itens ao carrinho
+- Fluxo de checkout
+
+---
+
+## Como executar os testes Selenium
+
+### Pré-requisitos
+
+- Java instalado
+- Maven configurado
+- Chrome instalado
+
+---
+
+### Execução
+
+```bash
+mvn clean test
+```
